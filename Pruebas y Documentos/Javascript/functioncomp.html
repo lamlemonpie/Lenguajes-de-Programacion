@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="ramda.min.js"></script>
+</head>
+<body>
+
+    <div id="test">
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+//Composición de funciones
+function show(val,id){
+    var node     = document.createElement("li");
+    var textNode = document.createTextNode(val);
+    node.appendChild(textNode);
+    document.getElementById(id).appendChild(node);
+}
+
+divid = "test"
+
+function h(x){
+    return x+1;
+}
+ 
+ //g(x) = x^2
+ //number -> number
+ function g(x){
+     return x*x;
+ }
+
+// f(x) = convert x to string
+//number -> string
+function f(x){
+    return x.toString();
+}
+
+const j = f(g(h(1)));
+//console.log(j);
+show(j,divid);
+
+//R = Ramda
+//composite = (fºgºh)
+
+const composite = R.compose(f,g,h);
+//Execute
+const y = composite(1);
+//console.log(y); //'4'
+show(y,divid);
+
+</script>
+
+<script>
+
+//
+f =(m) => console.log(m)
+f("prueba")
+
+//
+obj = {
+    f(m) {
+        console.log(m)
+    }
+
+}
+
+obj.f("prueba2")
+
+//
+a = [
+    m => console.log(m),
+    m => console.log(m+" jiji")
+]
+a[0]('prueba3');
+a[1]('prueba4');
+
+
+//
+const createF = () => {
+    return (m) => console.log(m)
+}
+
+const b = createF();
+b("prueba5");
+
+</script>

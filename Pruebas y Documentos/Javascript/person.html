@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h3 style="color:blue;" >Personas:</h3>
+    <div style="color:green;"  id="my_div">
+    </div>
+</body>
+
+</html>
+
+<script>
+
+//Función para mostrar a las personas en una lista.
+function show(person){
+    var node     = document.createElement("li");
+    var textNode = document.createTextNode(person.firstName+" "+person.lastName+", "+person.age);
+    node.appendChild(textNode);
+    document.getElementById("my_div").appendChild(node);
+}
+//Creación de Personas
+var person = {firstName: "Jhon",lastName:"Doe",age:50};
+
+var person2 = new Object();
+person2.firstName = "Alejandro";
+person2.lastName  = "Larraondo";
+person2.age       = 22;
+
+function Person(first,last,age){
+    this.firstName = first;
+    this.lastName  = last;
+    this.age       = age;
+
+    this.name=function(){
+        return this.firstName+" "+this.lastName;
+    };
+}
+
+var person3 = new Person("Yara","Quispe",20);
+var person4 = new Person("David","Cuaquira",24);
+
+show(person);
+show(person2);
+show(person3);
+show(person4);
+
+
+</script>
+

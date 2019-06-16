@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+<body>
+
+    <div id="test">
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+
+function double(arr){
+    arr2 = []
+    for (i = 0; i<arr.length; i++){
+        arr2.push(arr[i]*2);
+    }
+    return arr2;
+}
+
+function double2(arr){
+ return arr.map(x=>x*2);   
+}
+
+function parimpar(x){
+    if(x%2 == 0) return "par";
+    else         return "impar";
+    
+}
+
+arr = [1,2,3,4];
+arr2 = double(arr)
+arr3 = double2(arr)
+
+console.log(arr)
+console.log(arr2)
+console.log(arr3)
+console.log(arr.map(parimpar))
+
+
+</script>
